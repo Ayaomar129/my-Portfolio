@@ -1,0 +1,340 @@
+:root{
+    --fonttype:'Playwrite AU QLD', sans-serif;
+  --sec_color: rgb(234, 225, 255);
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body {
+    height:100vh;
+    width: 100%;
+    margin: 0px;
+    font-family: sans-serif;
+    background-color:rgb(0, 9, 43);
+    color: rgb(249, 240, 255);
+}
+.container1 {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(BG_Image.png); */
+    /* background-image: url(BG.png); */
+    background-image: url(starscopy.png);
+    background-size:cover ;
+    background-attachment:fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;  
+    border-radius: 40px;
+}
+
+.container1 section {
+   
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+       font-family:var(--fonttype);
+
+}
+.container1 section h1 {
+    font-size: 50px;
+    padding-top: 20px;
+    text-align: center;
+    color: var(--sec_color);
+
+}
+.rocket {
+  position: absolute;
+  bottom: -10%; /* يبدأ تحت الشاشة */
+  visibility: hidden;
+  transform: translateX(-50%);
+  animation: fly 1.5s linear forwards;
+}
+
+@keyframes fly {
+/* 0% {
+    bottom: 0%; نقطة البداية
+    transform: translateX(-50%) rotate(0deg);
+  } */
+0% {
+   visibility: visible;
+    bottom: 10%; /* يوصل فوق */
+    transform: translateX(-90%) rotate(25deg);
+     /* يلف */
+    }
+    50% {
+       
+        transform: rotate(-20deg);
+        bottom: 20%;
+       
+        transform: translateX(100%); /* يلف أكثر */
+    }
+
+    75% {
+        visibility: visible;
+        transform: rotate(-50deg) translateY(-20%); /* يلف لليمين */
+        bottom: 30%; /* يوصل فوق */
+        
+      
+    }
+    100% {
+    visibility: visible;
+    transform: rotate(-90deg) translateY(-40%); /* يلف لليسار */
+    bottom: 43%; /* يوصل فوق */
+    
+    }
+}
+
+nav {
+    width:fit-content ;
+    height: 60px;
+    padding: 7px 50px;
+    padding-left:3px ;
+    position: fixed;
+    top: 40px;
+    background-color:var(--sec_color);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0px 10px 20px rgba(158, 157, 157, 0.521);
+}
+nav ul{ 
+    width: 100%;
+    list-style: none;    
+    text-align: center;
+    padding: 0px;
+    display: flex;
+    justify-content:center;
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+    margin: 0px;
+}
+nav ul li .links {
+    color: rgb(22, 0, 30);
+    font-size: 18px;
+    position: relative; 
+    padding: 2px 0; /* padding أفقي صفر عشان التمركز */
+    text-decoration: none;
+    display: inline-block; /* مهم عشان البسودو اليمنت يتظبط */
+    font-family: sans-serif;
+}
+
+nav ul li .links::after {
+    content: "";
+    position: absolute;
+    left: 0; /* يبدأ من أول الكلمة */
+    bottom: 0;
+    width: 0%;
+    
+    height: 2px;
+    background-color: rgb(59, 0, 79);
+    transition: width 0.5s ease-in-out;
+}
+
+nav ul li .links:hover::after {
+  width: 100%;/* يغطي عرض الكلمة بالظبط */
+}
+
+nav ul li .logo{
+    background-image: url(profile.png);
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 0px;
+    background-position: bottom;
+    
+}
+.breif{
+    display: flex;
+    justify-content: center;
+    border-radius: 100px;
+    width:100%;
+    height: fit-content;
+}
+.breif p {
+    background:linear-gradient(to right, rgb(91, 0, 229),rgb(105, 5, 211) ,rgb(15, 0, 61));
+    width: 80%;
+    height: fit-content;
+    padding: 70px;
+    line-height: 40px;
+    display: inline-block;
+    font-size: 20px;
+    margin: 80px 0px;
+    text-align: center;
+    border-radius: 50px;
+    color:rgb(247, 243, 255); 
+    box-shadow: 10px 5px 30px rgba(158, 157, 157, 0.477);
+}
+
+.breif p span {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: var(--fonttype);
+    font-size: xx-large;
+    margin: 10px;
+}
+#projects {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 24px;
+}
+
+#projects h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--sec_color);
+    font-family: var(--fonttype);
+}
+
+#projects svg {
+    transform: rotate(180deg);
+    fill: var(--sec_color);
+    transition: fill 0.3s ease;
+}
+
+#projects .uiux{
+    width: max-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    font-size: 24px;
+    padding: 24px 40px;
+    gap: 24px;
+   
+}
+#projects .Easyfix {
+    background-color:rgba(234, 225, 255, 0.276);
+    border-radius: 20px;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    padding: 24px 24px;
+    gap: 24px;
+}
+#projects .Easyfix img {
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+#projects .Easyfix h3 {
+    font-size: 24px;
+    display: inline-block;
+    color:var(--sec_color);
+    font-family:sans-serif;
+}
+#projects .Easyfix p {
+    font-size: 18px;
+    color: var(--sec_color);
+    text-align: start;
+    width: 800px;
+    line-height: 1.5;
+}
+#projects .alamal {
+    background-color:rgba(234, 225, 255, 0.276);
+    border-radius: 20px;
+    
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
+    gap: 24px;
+    padding: 24px 24px;
+}
+#projects .alamal img {
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+#projects .alamal h3 {
+    font-size: 24px;
+    display: inline-block;
+    color:var(--sec_color);
+    
+    font-family:sans-serif;
+}
+#projects .alamal p {
+    font-size: 18px;
+    color: var(--sec_color);
+    text-align: start;
+    width: 800px;
+    line-height: 1.5;
+}
+#contact {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 80px 0px;
+    margin: auto;
+}
+
+#contact h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--sec_color);
+    text-align: center;
+    margin-bottom: 24px;
+    font-family: var(--fonttype);
+}
+
+#contact svg {
+    fill: var(--sec_color);
+    transition: fill 0.3s ease;
+}
+
+#contact div {
+    width: 100%;
+    height:fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+#contact div a svg {
+    width: 50px;
+    height: 50px;
+    fill: var(--sec_color);
+    transition: fill 0.3s ease;
+}
+#contact div a svg:hover {
+    fill: rgb(251, 248, 253);
+}
+#contact div a {
+    text-decoration: none;
+    color: var(--sec_color);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#contact div a p:hover {
+    color: rgb(251, 248, 253);
+}
