@@ -24,7 +24,7 @@ body {
     justify-content: center;
     /* background-image: url(BG_Image.png); */
     /* background-image: url(BG.png); */
-    background-image: url(starscopy.png);
+    background-image: url(images/starscopy.png);
     background-size:cover ;
     background-attachment:fixed;
     background-position: bottom;
@@ -144,7 +144,7 @@ nav ul li .links:hover::after {
 }
 
 nav ul li .logo{
-    background-image: url(profile.png);
+    background-image: url(images/profile.png);
     background-size: cover;
     width: 70px;
     height: 70px;
